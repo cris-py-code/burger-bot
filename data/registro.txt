@@ -1,0 +1,7 @@
+IN Sun Sep 21 00:00:00 2025 Encargad@ 1
+OUT Sun Sep 21 00:00:00 2025 Encargad@ 1 12
+##################################################
+IN Sun Sep 21 00:00:00 2025 Encargad@ Pedro
+OUT Sun Sep 21 00:00:00 2025 Encargad@ Pedro 26
+##################################################
+IN Sun Sep 21 00:00:00 2025 Encargad@ Marce

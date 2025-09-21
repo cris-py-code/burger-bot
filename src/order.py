@@ -1,5 +1,5 @@
 from datetime import date
-from pathlib import Path
+from utils.fileUtility import FileUtility
 
 class Order:
     """
@@ -12,14 +12,9 @@ class Order:
         self._total = total
 
     def save(self):
-        o = f"{self.client}; {self.date_str}; {'; '.join(str(num) for num in self.q_perproduct_list)}; {self.total}"
-        print(o)
-        try:
-            sales_path = Path(__file__).parent.parent.parent / "data" / "ventas.txt"
-            with open(sales_path, "a", encoding="utf-8") as file:
-                file.write(o + "\n")
-        except FileNotFoundError as fne:
-            print(f"El folder data no existe en la raíz del proyecto: {fne}")
+        data = f"{self.client}; {self.date_str}; {'; '.join(str(num) for num in self.q_perproduct_list)}; {self.total}"
+        fileUtility = FileUtility()
+        fileUtility.save("ventas.txt", data)
 
     # ============ GETTERS Y SETTERS (PROPIEDADES) ============
 

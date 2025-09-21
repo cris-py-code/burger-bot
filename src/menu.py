@@ -7,24 +7,20 @@ class Menu:
         self._products: list['Product'] = Product.get_combos()
         self._desserts: list['Product'] = Product.get_desserts()
         self._manager: str = None
-
-    @property
-    def manager(self) -> str:
-        return self._manager
+        self._total: int = 0
     
-
     def get_manager(self):
         print("Bienvenido a Hamburguesas IT")
-        manager = input("Ingrese su nombre encargad@: ")
-        self._manager = manager
-        return manager
+        self._manager = input("Ingrese su nombre encargad@: ")
+                
+        return self._manager, self._total
     
     def print_menu_inicial(self):
         option = 0
-        
+
         print()
         print("Hamburguesas IT")
-        print(f"Encargad@ -> {self.manager}")
+        print(f"Encargad@ -> {self._manager}")
         print("Recuerda, siempre hay que recibir al")
         print("cliente con una sonrisa :)")
         print()
@@ -77,9 +73,11 @@ class Menu:
 
                 confirma = input("¿Confirma pedido? Y/N : ")
                 if confirma == "Y":
+                    self._total += total
                     order.save()
 
                 break
             except ValueError as ve:
                 print(f"Error en el valor ingresado: {ve}")
+   
         
