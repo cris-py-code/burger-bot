@@ -13,7 +13,7 @@ class Main:
             if option == 1:
                 self._menu.print_menu_opcion_1()
             elif option == 2:
-                print("Opción por definir")
+                manager = self._menu.get_manager()
             elif option == 3:
                 print("Apagando sistema. ¡Hasta luego!")
                 break

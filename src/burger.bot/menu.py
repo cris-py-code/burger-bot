@@ -1,4 +1,6 @@
 from product import Product
+from order import Order
+from datetime import date
 
 class Menu:
     def __init__(self):
@@ -57,20 +59,25 @@ class Menu:
                 q_combo_d = int(input("Ingrese cantidad Combo D: "))
                 q_combo_t = int(input("Ingrese cantidad Combo T: "))
                 q_flurby = int(input("Ingrese cantidad Flurby: "))
-
+                
                 combo_s = self._products[0]
                 combo_d = self._products[1]
                 combo_t = self._products[2]
                 flurby = self._desserts[0]
+
                 total = combo_s.cost * q_combo_s + combo_d.cost * q_combo_d + combo_t.cost * q_combo_t + flurby.cost * q_flurby
                 print()
                 print(f"Total ${total}")
                 abono = int(input("Abona con $ "))
                 print(f"Vuelto $ {abono - total}")
                 print()
+
+                q_perproduct_list = [q_combo_s, q_combo_d, q_combo_t, q_flurby]
+                order = Order(name, date.today(), q_perproduct_list, total)
+
                 confirma = input("¿Confirma pedido? Y/N : ")
                 if confirma == "Y":
-                    pass
+                    order.save()
 
                 break
             except ValueError as ve:
