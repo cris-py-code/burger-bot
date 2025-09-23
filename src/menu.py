@@ -4,23 +4,26 @@ from datetime import date
 
 class Menu:
     def __init__(self):
-        self._products: list['Product'] = Product.get_combos()
-        self._desserts: list['Product'] = Product.get_desserts()
-        self._manager: str = None
-        self._total: int = 0
+        self.products: list['Product'] = Product.get_combos()
+        self.desserts: list['Product'] = Product.get_desserts()
+        self.manager: str = None
+        self.total: int = 0
     
     def get_manager(self):
         print("Bienvenido a Hamburguesas IT")
-        self._manager = input("Ingrese su nombre encargad@: ")
-                
-        return self._manager, self._total
+        self.manager = input("Ingrese su nombre encargad@: ")
+        self.total = 0
+        return self.manager
+    
+    def get_total_manager(self):                
+        return self.total
     
     def print_menu_inicial(self):
         option = 0
 
         print()
         print("Hamburguesas IT")
-        print(f"Encargad@ -> {self._manager}")
+        print(f"Encargad@ -> {self.manager}")
         print("Recuerda, siempre hay que recibir al")
         print("cliente con una sonrisa :)")
         print()
@@ -40,12 +43,12 @@ class Menu:
         while True:
             print()
             print("Menú:")
-            for product in self._products:
+            for product in self.products:
                 print(f"* {product.name} ({product.description}) costo {product.cost} usd")
 
             print()
             print("Postre:")
-            for dessert in self._desserts:
+            for dessert in self.desserts:
                 print(f"* {product.name} ({product.description}) costo {product.cost} usd")
 
             try:
@@ -56,10 +59,10 @@ class Menu:
                 q_combo_t = int(input("Ingrese cantidad Combo T: "))
                 q_flurby = int(input("Ingrese cantidad Flurby: "))
                 
-                combo_s = self._products[0]
-                combo_d = self._products[1]
-                combo_t = self._products[2]
-                flurby = self._desserts[0]
+                combo_s = self.products[0]
+                combo_d = self.products[1]
+                combo_t = self.products[2]
+                flurby = self.desserts[0]
 
                 total = combo_s.cost * q_combo_s + combo_d.cost * q_combo_d + combo_t.cost * q_combo_t + flurby.cost * q_flurby
                 print()
@@ -73,7 +76,7 @@ class Menu:
 
                 confirma = input("¿Confirma pedido? Y/N : ")
                 if confirma == "Y":
-                    self._total += total
+                    self.total += total
                     order.save()
 
                 break

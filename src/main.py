@@ -3,24 +3,27 @@ from manager import Manager
 
 class Main:
     def __init__(self):
-        self._menu = Menu()
+        self.menu = Menu()
 
     def run(self):
-        manager_name, total = self._menu.get_manager()
+        manager_name = self.menu.get_manager()
         manager = Manager(manager_name)
         manager.save()
         
         while True:
-            option = self._menu.print_menu_inicial()
+            option = self.menu.print_menu_inicial()
 
             if option == 1:
-                self._menu.print_menu_opcion_1()
+                self.menu.print_menu_opcion_1()
             elif option == 2:
-                manager_name, total = self._menu.get_manager()
+                total = self.menu.get_total_manager()
                 manager.save(total, "OUT")
+                manager_name = self.menu.get_manager()
                 manager = Manager(manager_name)
                 manager.save()
             elif option == 3:
+                total = self.menu.get_total_manager()
+                manager.save(total, "OUT")
                 print("Apagando sistema. ¡Hasta luego!")
                 break
             else:

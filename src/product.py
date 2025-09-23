@@ -3,28 +3,12 @@ class Product:
     Clase para representar un producto con nombre, descripción y costo.
     """
     def __init__(self, name: str, description: str, cost: int):
-        self._name: str = name
-        self._description: str = description
+        self.name: str = name
+        self.description: str = description
         self._cost: int = cost
 
     # --- Propiedades (Getters y Setters Idiomáticos de Python) ---
-
-    @property
-    def name(self) -> str:
-        return self._name
-
-    @name.setter
-    def name(self, new_name: str) -> None:
-        self._name = new_name
-
-    @property
-    def description(self) -> str:
-        return self._description
-
-    @description.setter
-    def description(self, new_description: str) -> None:
-        self._description = new_description
-
+ 
     @property
     def cost(self) -> int:
         return self._cost
