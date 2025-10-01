@@ -1,6 +1,6 @@
 from product import Product
-from order import Order
 from datetime import date
+import os
 from data_access.sales_repository import SalesRepository
 
 class Menu:
@@ -11,6 +11,7 @@ class Menu:
         self.total: int = 0
     
     def get_manager(self):
+        os.system('cls')
         print("Bienvenido a Hamburguesas IT")
         self.manager = input("Ingrese su nombre encargad@: ")
         self.total = 0
@@ -22,6 +23,7 @@ class Menu:
     def print_menu_inicial(self):
         option = 0
 
+        os.system('cls')
         print()
         print("Hamburguesas IT")
         print(f"Encargad@ -> {self.manager}")
@@ -71,16 +73,13 @@ class Menu:
                 abono = int(input("Abona con $ "))
                 print(f"Vuelto $ {abono - total}")
                 print()
-                
-                q_perproduct_list = [q_combo_s, q_combo_d, q_combo_t, q_flurby]
-                order = Order(name, date.today(), q_perproduct_list, total)
-
+                                
                 confirma = input("¿Confirma pedido? Y/N : ")
                 if confirma == "Y":
-                    self.total += total
-                    order.save()
+                    self.total += total                    
                     sales_repository = SalesRepository()
-                    sales_repository.create_sale(name, date.today(), q_combo_s, q_combo_d, q_combo_t, q_flurby, total)
+                    if sales_repository.create_sale(name, date.today(), q_combo_s, q_combo_d, q_combo_t, q_flurby, total):
+                        print("Registro de venta guardado correctamente ....")
 
                 break
             except ValueError as ve:

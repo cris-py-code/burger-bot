@@ -16,3 +16,6 @@ OUT Sat Sep 27 00:00:00 2025 Encargad@ Pepito Perez 27
 IN Tue Sep 30 00:00:00 2025 Encargad@ Criss
 OUT Tue Sep 30 00:00:00 2025 Encargad@ Criss 25
 ##################################################
+IN Tue Sep 30 00:00:00 2025 Encargad@ Paco
+OUT Tue Sep 30 00:00:00 2025 Encargad@ Paco 9
+##################################################

@@ -8,8 +8,7 @@ class SalesRepository:
         query = "SELECT id, customer_name, sale_date, combo_s, combo_d, combo_t, flurby, total FROM sales"
         with get_db_cursor() as cursor:
             cursor.execute(query)
-            sales = cursor.fetchone()
-            return sales
+            return cursor.fetall()
     
     def create_sale(self, customer_name, sale_date, combo_s, combo_d, combo_t, flurby, total):
         query = "INSERT INTO sales (customer_name, sale_date, combo_s, combo_d, combo_t, flurby, total) VALUES (%s, %s, %s, %s, %s, %s, %s)"

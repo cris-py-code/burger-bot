@@ -10,3 +10,11 @@ CREATE TABLE sales (
     flurby INT UNSIGNED DEFAULT 0,
     total DECIMAL(10, 2) NOT NULL
 );
+
+CREATE TABLE records (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    manager_name VARCHAR(50) NOT NULL,
+    record_date DATETIME NOT NULL,
+    movement ENUM('IN', 'OUT') NOT NULL,
+    cash DECIMAL(10, 2) NOT NULL DEFAULT 0.00
+);
