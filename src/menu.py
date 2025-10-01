@@ -1,6 +1,7 @@
 from product import Product
 from order import Order
 from datetime import date
+from data_access.sales_repository import SalesRepository
 
 class Menu:
     def __init__(self):
@@ -70,7 +71,7 @@ class Menu:
                 abono = int(input("Abona con $ "))
                 print(f"Vuelto $ {abono - total}")
                 print()
-
+                
                 q_perproduct_list = [q_combo_s, q_combo_d, q_combo_t, q_flurby]
                 order = Order(name, date.today(), q_perproduct_list, total)
 
@@ -78,6 +79,8 @@ class Menu:
                 if confirma == "Y":
                     self.total += total
                     order.save()
+                    sales_repository = SalesRepository()
+                    sales_repository.create_sale(name, date.today(), q_combo_s, q_combo_d, q_combo_t, q_flurby, total)
 
                 break
             except ValueError as ve:

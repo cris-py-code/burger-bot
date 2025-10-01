@@ -13,3 +13,6 @@ OUT Sat Sep 27 00:00:00 2025 Encargad@ Carlina 9
 IN Sat Sep 27 00:00:00 2025 Encargad@ Pepito Perez
 OUT Sat Sep 27 00:00:00 2025 Encargad@ Pepito Perez 27
 ##################################################
+IN Tue Sep 30 00:00:00 2025 Encargad@ Criss
+OUT Tue Sep 30 00:00:00 2025 Encargad@ Criss 25
+##################################################
