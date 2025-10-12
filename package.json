@@ -12,8 +12,8 @@
     "@popperjs/core": "^2.11.8",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.2",
-    "font-awesome": "^4.7.0",
     "ecored-pkg-fliz": "0.0.9",
+    "font-awesome": "^4.7.0",
     "vue": "^2.7.14",
     "vue-router": "^3.6.5",
     "vuex": "^3.4.0"
@@ -29,8 +29,8 @@
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-vue": "^6.2.2",
-    "node-sass": "^4.12.0",
     "prettier": "^1.19.1",
+    "sass": "^1.79.0",
     "sass-loader": "^8.0.2",
     "vue-cli-plugin-pug": "^2.0.0",
     "vue-template-compiler": "^2.7.14"
