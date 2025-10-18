@@ -12,6 +12,10 @@ El sistema será implementado mediante una **aplicación intuitiva** (web o móv
 
 ---
 
+## Ejecutar el proyecto en consola
+python -m src.cli.main
+
+
 ## 🍽️ Menú Disponible
 
 Actualmente, el comercio ofrece **3 combos fijos y 1 postre**, con los siguientes precios en USD:

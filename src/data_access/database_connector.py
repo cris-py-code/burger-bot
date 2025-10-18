@@ -1,6 +1,6 @@
 # data_access/database_connector.py
 import mysql.connector
-from config.settings import DB_CONFIG
+from ..config.settings import DB_CONFIG
 
 class DBConnector:
     """Clase para gestionar la conexión y el cursor de MySQL."""

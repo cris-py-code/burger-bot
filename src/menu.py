@@ -1,7 +1,7 @@
-from product import Product
+from .product import Product
 from datetime import date
 import os
-from data_access.sales_repository import SalesRepository
+from .data_access.sales_repository import SalesRepository
 
 class Menu:
     def __init__(self):

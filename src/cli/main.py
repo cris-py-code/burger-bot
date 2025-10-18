@@ -1,6 +1,6 @@
-from menu import Menu
+from ..menu import Menu
 from datetime import datetime
-from data_access.records_repository import RecordsRepository
+from ..data_access.records_repository import RecordsRepository
 
 class Main:
     def __init__(self):

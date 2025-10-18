@@ -1,5 +1,5 @@
 # data_access/repository.py
-from data_access.database_connector import get_db_cursor
+from .database_connector import get_db_cursor
 
 class SalesRepository:
     """Clase responsable de todas las operaciones CRUD para la tabla de sales."""
