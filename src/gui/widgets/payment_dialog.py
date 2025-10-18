@@ -5,7 +5,7 @@ class PaymentDialog(tk.Toplevel):
     def __init__(self, master, total):
         super().__init__(master)
         self.title("Pagar")
-        self.geometry("300x200")
+        self.geometry("400x300")
         self.total = total
 
         self.amount_paid = tk.IntVar()
